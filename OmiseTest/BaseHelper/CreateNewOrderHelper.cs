@@ -14,11 +14,14 @@ namespace OmiseTest.BaseHelper
     public class CreateNewOrderHelper
     {
         private string ORDER_REQUEST_JSON_PATH = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestData\\");
+        
         public void CreateNewOrderTest(string testName,
            string description,
            string filename,
            string status)
         {
+            Console.WriteLine("Testname : " + testName);
+            Console.WriteLine("Test Description : " + description);
             string content = ReadCreateOrderRequestFile(filename);
             var orderResult = new HtttpRequestHelper().requestPostMethod(content).Result;
             verifyCreateNewOrder(orderResult, status);
@@ -28,7 +31,8 @@ namespace OmiseTest.BaseHelper
         {
             CreateOrder jsonRes = JsonConvert.DeserializeObject<CreateOrder>(response);
             Assert.AreEqual(jsonRes.status, expectedStatus, "Status mismatch");
-
+            Console.WriteLine("Transaction status expected :" + expectedStatus);
+            Console.WriteLine("Transaction status was :" + jsonRes.status);
         }
 
         protected string ReadCreateOrderRequestFile(string filename)

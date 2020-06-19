@@ -19,7 +19,8 @@ namespace OmiseTest
             long orderId,
             string status)
         {
-           
+            Console.WriteLine("Testname : "+ testName);
+            Console.WriteLine("Test Description : " + description);
             var orderResult = new HtttpRequestHelper().requestGetMethod(orderId).Result;
             verifyOrderDetails(orderId, orderResult, status);
           
@@ -30,17 +31,14 @@ namespace OmiseTest
         public void verifyOrderDetails(long expectedOrderId,string response,string expectedStatus)
         {
             OrderDetail jsonRes = JsonConvert.DeserializeObject<OrderDetail>(response);
-            WriteLine("Verify orderId :" + expectedOrderId);
+            Console.WriteLine("Verify orderId :" + expectedOrderId);
             Assert.AreEqual(jsonRes.orderId, expectedOrderId, "API return orderId correctly");
-            WriteLine("Verify order amount : " + expectedStatus);
+            Console.WriteLine("Verify order status : " + expectedStatus);
             Assert.AreEqual(jsonRes.status, expectedStatus, "Order status:"+ jsonRes.status);
             
             
         }
-        public void WriteLine(string message)
-        {
-            Trace.WriteLine(message);
-        }
+     
 
     }
 }
