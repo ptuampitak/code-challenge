@@ -17,30 +17,23 @@ namespace OmiseTest
         public void GetOrderIdTest(string testName,
             string description,
             long orderId,
-            double amount)
+            string status)
         {
-            HttpResponseHelper orderResult = new HtttpRequestHelper().requestGetMethod(orderId);
-            if (orderResult.ResponseStatusCode == HttpStatusCode.OK)
-            {
-                verifyOrderDetails(orderId, orderResult.Response, amount);
-            }
-            else {
-                Assert.AreEqual(orderResult.ResponseStatusCode, HttpStatusCode.OK, "HTTP return :" + orderResult.ResponseStatusCode);
-                WriteLine("Order statusCode:" + orderResult.ResponseStatusCode);
-                WriteLine("Order status:" + orderResult.Response);
-            }
+           
+            var orderResult = new HtttpRequestHelper().requestGetMethod(orderId).Result;
+            verifyOrderDetails(orderId, orderResult, status);
           
 
 
         }
 
-        public void verifyOrderDetails(long orderId,string response,double sellingAmount)
+        public void verifyOrderDetails(long expectedOrderId,string response,string expectedStatus)
         {
             OrderDetail jsonRes = JsonConvert.DeserializeObject<OrderDetail>(response);
-            WriteLine("Verify orderId :" + orderId);
-            Assert.AreEqual(jsonRes.orderId, orderId,"API return orderId correctly");
-            WriteLine("Verify order amount : " + sellingAmount);
-            Assert.AreEqual(jsonRes.amount, sellingAmount,"Amount mismatch");
+            WriteLine("Verify orderId :" + expectedOrderId);
+            Assert.AreEqual(jsonRes.orderId, expectedOrderId, "API return orderId correctly");
+            WriteLine("Verify order amount : " + expectedStatus);
+            Assert.AreEqual(jsonRes.status, expectedStatus, "Order status:"+ jsonRes.status);
             
             
         }

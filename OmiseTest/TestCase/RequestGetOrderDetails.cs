@@ -10,8 +10,8 @@ namespace OmiseTest.TestCase
     {
         public static IEnumerable<TestCaseData> GetOrderIdTestCases()
         {
-            yield return new TestCaseData("GetOrderId001","Request valid orderId", 5,235.2);
-            yield return new TestCaseData("GetOrderId002", "Request invalid orderId", 9999,400);
+            yield return new TestCaseData("GetOrderId001","Request valid orderId", 38, "Transaction success");
+            yield return new TestCaseData("GetOrderId002", "Request invalid orderId", 300,"OrderId not found");
         }
 
         [TestCaseSource("GetOrderIdTestCases")]
@@ -19,11 +19,11 @@ namespace OmiseTest.TestCase
             string testName,
             string description,
             long orderId,
-            double amount
+            string status
             )
         {
             GetOrderIdDetailsHelper obj = new GetOrderIdDetailsHelper();
-            obj.GetOrderIdTest(testName, description, orderId, amount);
+            obj.GetOrderIdTest(testName, description, orderId, status);
             
         }
     }

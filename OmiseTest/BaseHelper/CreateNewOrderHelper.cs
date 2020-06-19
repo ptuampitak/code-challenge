@@ -20,14 +20,14 @@ namespace OmiseTest.BaseHelper
            string status)
         {
             string content = ReadCreateOrderRequestFile(filename);
-            var orderResult = new HtttpRequestHelper().CreateItemAsync(content).Result;
+            var orderResult = new HtttpRequestHelper().requestPostMethod(content).Result;
             verifyCreateNewOrder(orderResult, status);
         }
 
-        public void verifyCreateNewOrder(string response, string expectedstatus)
+        public void verifyCreateNewOrder(string response, string expectedStatus)
         {
             CreateOrder jsonRes = JsonConvert.DeserializeObject<CreateOrder>(response);
-            Assert.AreEqual(jsonRes.status, expectedstatus, "Status mismatch");
+            Assert.AreEqual(jsonRes.status, expectedStatus, "Status mismatch");
 
         }
 
