@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace OmiseTest.TestCase
 {
-    class CreateNewOrder
+    [Category("POST_Method")]
+    public class CreateNewOrder
     {
         public static IEnumerable<TestCaseData> CreateNewOrderTestCases()
         {

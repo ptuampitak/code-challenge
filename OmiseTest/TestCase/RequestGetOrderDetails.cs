@@ -4,7 +4,7 @@ using NUnit.Framework;
 
 namespace OmiseTest.TestCase
 {
-    [TestFixture]
+
     [Category("GET_Method")]
     public class RequestGetOrderDetails
     {
