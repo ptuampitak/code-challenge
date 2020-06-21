@@ -40,7 +40,6 @@ tests:
       - Expect sign in successfully
       - Expect land to [Transaction] Page
       - Expect should see <Last updated balance> on the top of menu
-
       
       
   - name: Verify  messaging when user login with incorrect pin

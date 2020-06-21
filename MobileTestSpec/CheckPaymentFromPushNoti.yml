@@ -57,8 +57,7 @@ tests:
       - Expect should see <History> on the top of menu
       - Expect to see <Shizue Finnerty> in the [First] record
       
-      
-      
+        
   - name: Verify messaging if user confirm payment with incorrect PIN
     group: PaymentFromPushNoti
     environment: Mock

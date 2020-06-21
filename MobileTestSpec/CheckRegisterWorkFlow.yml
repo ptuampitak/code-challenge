@@ -44,8 +44,7 @@ tests:
       - Expect Should see duplicate phone number blue pop up
       - Tap [close] button
       - Should stay on [Get Started] page
-
-      
+     
       
   - name: Verify messaging when user fill incorrect OTP
     group: Register
