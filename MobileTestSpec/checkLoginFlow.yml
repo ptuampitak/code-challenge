@@ -1,0 +1,87 @@
+description:
+ name: Login
+ devices:
+   - Phone
+
+tests:
+  - name: Verify Log-in with pin success
+    group: Login
+    environment: Mock
+    testcase_id: login_01
+    tags:
+      - Flow
+    platforms: 
+      - iOS
+      - Android
+    content:
+      - Go to [Login] page
+      - Expect should see root [Login] page
+      - Tap [Sign in] button
+      - Expect should see [Login] page
+      - Type <447944> in [Login with pin] field
+      - Expect sign in successfully
+      - Expect land to [Transaction] Page
+      - Expect should see <Last updated balance> on the top of menu
+      
+  - name: Verify Log-in with fingerprint success
+    group: Login
+    environment: Mock
+    testcase_id: login_02
+    tags:
+      - Flow
+    platforms: 
+      - Android
+    content:
+      - Go to [Login] page
+      - Expect should see root [Login] page
+      - Tap [Sign in] button
+      - Expect should see [Login] page
+      - Type <fingerprint authentication> in [Login using Fingerprint] field
+      - Expect sign in successfully
+      - Expect land to [Transaction] Page
+      - Expect should see <Last updated balance> on the top of menu
+
+      
+      
+  - name: Verify  messaging when user login with incorrect pin
+    group: Login
+    environment: Mock
+    testcase_id: login_03
+    tags:
+      - Flow
+    platforms: 
+      - iOS
+      - Android
+    content:
+      - Go to [Login] page
+      - Expect should see root [Login] page
+      - Tap [Sign in] button
+      - Expect should see [Login] page
+      - Type <447945> in [Login with pin] field
+      - Expect to see incorrect pin number
+      - Type <447944> in [Login with pin] field
+      - Expect sign in successfully
+      - Expect land to [Transaction] Page
+      - Expect should see <Last updated balance> on the top of menu
+
+      
+  - name: Verify messaging when user login with incorrect Fingerprints
+    group: Login
+    environment: Mock
+    testcase_id: login_04
+    tags:
+      - Flow
+    platforms: 
+      - Android
+    content:
+      - Go to [Login] page
+      - Expect should see root [Login] page
+      - Tap [Sign in] button
+      - Expect should see [Login] page
+      - Type <fingerprint invalid authentication> in [Login using Fingerprint] field
+      - Expect to see incorrect fingerprint authentication
+      - Type <fingerprint valid authentication> in [Login using Fingerprint] field
+      - Expect sign in successfully
+      - Expect land to [Transaction] Page
+      - Expect should see <Last updated balance> on the top of menu
+ 

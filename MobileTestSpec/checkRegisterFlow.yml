@@ -1,0 +1,113 @@
+description:
+ name: Registration
+ devices:
+   - Phone
+
+tests:
+  - name: Verify sign up success for new Login
+    group: Register
+    environment: Mock
+    testcase_id: register_01
+    tags:
+      - Flow
+    platforms: 
+      - iOS
+      - Android
+    content:
+      - Go to [Login] page
+      - Expect should see root [Login] page
+      - Tap [Get Started] button
+      - Expect should see [Get Started] page
+      - Type <9876766523> in [Phone number] field
+      - Tap [Get Started] button
+      - Type <11233> on otp field
+      - Expect sign up successfully
+      - Expect land to [Transaction] Page
+      - Expect should see <Last updated balance> on the top of menu
+      
+  - name: Verify sign up duplicate phone number for new Login
+    group: Register
+    environment: Mock
+    testcase_id: register_02
+    tags:
+      - Flow
+    platforms: 
+      - iOS
+      - Android
+    content:
+      - Go to [Login] page
+      - Expect should see root [Login] page
+      - Tap [Get Started] button
+      - Expect should see [Get Started] page
+      - Type <9876766523> in [Phone number] field
+      - Tap [Get Started] button
+      - Expect Should see duplicate phone number blue pop up
+      - Tap [close] button
+      - Should stay on [Get Started] page
+
+      
+      
+  - name: Verify messaging when user fill incorrect OTP
+    group: Register
+    environment: Mock
+    testcase_id: register_03
+    tags:
+      - Flow
+    platforms: 
+      - iOS
+      - Android
+    content:
+      - Go to [Login] page
+      - Expect should see root [Login] page
+      - Tap [Get Started] button
+      - Expect should see [Get Started] page
+      - Type <9876766523> in [Phone number] field
+      - Tap [Get Started] button
+      - Type <11235> on otp field
+      - Expect Should see incorrect OTP number
+
+      
+  - name: Verify resend OTP
+    group: Register
+    environment: Mock
+    testcase_id: register_04
+    tags:
+      - Flow
+    platforms: 
+      - iOS
+      - Android
+    content:
+      - Go to [Login] page
+      - Expect should see root [Login] page
+      - Tap [Get Started] button
+      - Expect should see [Get Started] page
+      - Type <9876766523> in [Phone number] field
+      - Tap [Get Started] button
+      - Tap [Send Again] button
+      - Type <23456> on otp field
+      - Expect sign up successfully
+      - Expect land to [Transaction] Page
+      - Expect should see <Last updated balance> on the top of menu
+      
+  - name: Verify sign up without fill phone number
+    group: Register
+    environment: Mock
+    testcase_id: register_05
+    tags:
+      - Flow
+    platforms: 
+      - iOS
+      - Android
+    content:
+      - Go to [Login] page
+      - Expect should see root [Login] page
+      - Tap [Get Started] button
+      - Expect should see [Get Started] page
+      - Tap [Get Started] button
+      - Expect to see message please fill phone number
+      - Type <9876766523> in [Phone number] field
+      - Type <23456> on otp field
+      - Expect sign up successfully
+      - Expect land to [Transaction] Page
+      - Expect should see <Last updated balance> on the top of menu
+  

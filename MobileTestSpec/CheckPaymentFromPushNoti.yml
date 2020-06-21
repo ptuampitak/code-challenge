@@ -1,0 +1,144 @@
+description:
+ name: PaymentFromPushNotification
+ devices:
+   - Phone
+
+tests:
+  - name: Verify user do payment from push notification success with PIN login
+    group: PaymentFromPushNoti
+    environment: Mock
+    testcase_id: pushNoti_01
+    tags:
+      - Flow
+    platforms: 
+      - iOS
+      - Android
+    content:
+      - Tab [My wallet Notification] tab
+      - Go to [Login] page
+      - Expect should see root [Login] page
+      - Type <447944> in [Login with pin] field
+      - Expect sign in successfully
+      - Expect land to [New Payment] Page
+      - Expect should see <New Payment> on the top of menu
+      - Tap <Shizue Finnerty> record
+      - Expect land to [Confirm payment] Page
+      - Type <447944> in [Confirm with your pin] field
+      - Expect land to [Payment successfully] Page
+      - Expect should see <Payment successfully> on the top of menu
+      - Tap [History] button
+      - Expect land to [History] Page
+      - Expect should see <History> on the top of menu
+      - Expect to see <Shizue Finnerty> in the [First] record
+      
+  - name: Verify user do payment from push notification success with Fingerprint login
+    group: PaymentFromPushNoti
+    environment: Mock
+    testcase_id: pushNoti_02
+    tags:
+      - Flow
+    platforms: 
+      - Android
+    content:
+      - Tab [My wallet Notification] tab
+      - Go to [Login] page
+      - Expect should see root [Login] page
+      - Type <fingerprint authentication> in [Login using Fingerprint] field
+      - Expect sign in successfully
+      - Expect land to [New Payment] Page
+      - Expect should see <New Payment> on the top of menu
+      - Tap <Shizue Finnerty> record
+      - Expect land to [Confirm payment] Page
+      - Type <fingerprint authentication> in [Login using Fingerprint] field
+      - Expect land to [Payment successfully] Page
+      - Expect should see <Payment successfully> on the top of menu
+      - Tap [History] button
+      - Expect land to [History] Page
+      - Expect should see <History> on the top of menu
+      - Expect to see <Shizue Finnerty> in the [First] record
+      
+      
+      
+  - name: Verify messaging if user confirm payment with incorrect PIN
+    group: PaymentFromPushNoti
+    environment: Mock
+    testcase_id: pushNoti_04
+    tags:
+      - Flow
+    platforms: 
+      - iOS
+      - Android
+    content:
+      - Tab [My wallet Notification] tab
+      - Go to [Login] page
+      - Expect should see root [Login] page
+      - Type <447944> in [Login with pin] field
+      - Expect sign in successfully
+      - Expect land to [New Payment] Page
+      - Expect should see <New Payment> on the top of menu
+      - Tap <Shizue Finnerty> record
+      - Expect land to [Confirm payment] Page
+      - Type <447945> in [Confirm with your pin] field
+      - Expect to see incorrect pin number
+      - Type <447944> in [Confirm with your pin] field
+      - Expect land to [Payment successfully] Page
+      - Expect should see <Payment successfully> on the top of menu
+      - Tap [History] button
+      - Expect land to [History] Page
+      - Expect should see <History> on the top of menu
+      - Expect to see <Shizue Finnerty> in the [First] record
+
+      
+  - name: Verify messaging if user confirm payment with incorrect Fingerprint
+    group: PaymentFromPushNoti
+    environment: Mock
+    testcase_id: pushNoti_05
+    tags:
+      - Flow
+    platforms: 
+      - Android
+    content:
+      - Tab [My wallet Notification] tab
+      - Go to [Login] page
+      - Expect should see root [Login] page
+      - Type <fingerprint authentication> in [Login using Fingerprint] field
+      - Expect sign in successfully
+      - Expect land to [New Payment] Page
+      - Expect should see <New Payment> on the top of menu
+      - Tap <Shizue Finnerty> record
+      - Expect land to [Confirm payment] Page
+      - Type <fingerprint invalid authentication> in [Login using Fingerprint] field
+      - Expect to see incorrect fingerprint authentication
+      - Type <fingerprint valid authentication> in [Login using Fingerprint] field
+      - Expect land to [Payment successfully] Page
+      - Expect should see <Payment successfully> on the top of menu
+      - Tap [History] button
+      - Expect land to [History] Page
+      - Expect should see <History> on the top of menu
+      - Expect to see <Shizue Finnerty> in the [First] record
+      
+  - name: Verify user back to home page successfully
+    group: PaymentFromPushNoti
+    environment: Mock
+    testcase_id: pushNoti_06
+    tags:
+      - Flow
+    platforms: 
+      - iOS
+      - Android
+    content:
+      - Tab [My wallet Notification] tab
+      - Go to [Login] page
+      - Expect should see root [Login] page
+      - Type <447944> in [Login with pin] field
+      - Expect sign in successfully
+      - Expect land to [New Payment] Page
+      - Expect should see <New Payment> on the top of menu
+      - Tap <Shizue Finnerty> record
+      - Expect land to [Confirm payment] Page
+      - Type <447944> in [Confirm with your pin] field
+      - Expect land to [Payment successfully] Page
+      - Expect should see <Payment successfully> on the top of menu
+      - Tap [Home] button
+      - Expect land to [Home] Page
+  
