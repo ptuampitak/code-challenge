@@ -87,11 +87,36 @@ tests:
       - Expect sign up successfully
       - Expect land to [Transaction] Page
       - Expect should see <Last updated balance> on the top of menu
+  
+  - name: Verify OTP expired
+    group: Register
+    environment: Mock
+    testcase_id: register_05
+    tags:
+      - Flow
+    platforms: 
+      - iOS
+      - Android
+    content:
+      - Go to [Login] page
+      - Expect should see root [Login] page
+      - Tap [Get Started] button
+      - Expect should see [Get Started] page
+      - Type <9876766523> in [Phone number] field
+      - Tap [Get Started] button
+      - Wait 60 seconds
+      - Type <11233> on otp field
+      - Expect to see OTP has been expired ,please click send OTP again
+      - Tap [Send Again] button
+      - Type <23456> on otp field
+      - Expect sign up successfully
+      - Expect land to [Transaction] Page
+      - Expect should see <Last updated balance> on the top of menu
       
   - name: Verify sign up without fill phone number
     group: Register
     environment: Mock
-    testcase_id: register_05
+    testcase_id: register_06
     tags:
       - Flow
     platforms: 

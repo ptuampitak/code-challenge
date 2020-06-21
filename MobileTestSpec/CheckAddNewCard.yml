@@ -88,7 +88,7 @@ tests:
       - Expect to see new card in the list with last 4 digit <*****9000>
      
       
-  - name: Verify add new caed success with scan card number 
+  - name: Verify add new card success with scan card number 
     group: AddNewCard
     environment: Mock
     testcase_id: addnewcard_04
