@@ -23,7 +23,7 @@ The scenarios are inclued
   - Create new order API by calling HTTP POST method 
 
 # Installation Steps
-please seen in https://github.com/ptuampitak/code-challenge/blob/master/InstallationSteps.pdf which is contains
+please seen in https://github.com/ptuampitak/code-challenge/blob/master/InstallationSteps.pdf which is contained
  - Set up mock service(Wiremock) API
  - Install IDE for running .Net Framework
     - Download Visual Studio (community) version 2019 : https://visualstudio.microsoft.com/vs/older-downloads/
