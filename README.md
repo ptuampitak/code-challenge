@@ -18,7 +18,7 @@ When we do Behaviour-Driven Development with Test-Spec we use concrete examples 
 Automation script for calling Wiremock API(https://github.com/ptuampitak/code-challenge/tree/master/OmiseTest)
 This automation test script implemented by .NET(C#) language.
 The scenarios are inclued
-  - Get order mock details by calling HTTP GET method ()
+  - Get order mock details by calling HTTP GET method
   - Create new order API by calling HTTP POST method 
 
 # Installation Steps
