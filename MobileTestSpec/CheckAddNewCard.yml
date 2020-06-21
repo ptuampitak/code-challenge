@@ -8,8 +8,6 @@ tests:
     group: AddNewCard
     environment: Mock
     testcase_id: addnewcard_01
-    tags:
-      - Flow
     platforms: 
       - iOS
       - Android
@@ -35,8 +33,6 @@ tests:
     group: AddNewCard
     environment: Mock
     testcase_id: addnewcard_02
-    tags:
-      - Flow
     platforms: 
       - iOS
       - Android
@@ -120,8 +116,6 @@ tests:
     group: AddNewCard
     environment: Mock
     testcase_id: addnewcard_05
-    tags:
-      - Flow
     platforms: 
       - iOS
       - Android
@@ -137,7 +131,7 @@ tests:
       - Expect should see <New Card> on the top of menu
       - Tap [Scan Card] button
       - Scan card
-      - Expect to see scan card not complete 
+      - Expect error message <scan card not complete>
       - Scan card
       - Expect to see <123456789000> in [Enter card number] field
       - Tap [Next] button
@@ -146,12 +140,10 @@ tests:
       - Expect should see <Bank Accounts> on the top of menu
       - Expect to see new card in the list with last 4 digit <*****9000>
       
- - name: Verify messaging when user add duplicate card number(fill card)
-     group: AddNewCard
+  - name: Verify messaging when user add duplicate card number(fill card)
+    group: AddNewCard
     environment: Mock
     testcase_id: addnewcard_06
-    tags:
-      - Flow
     platforms: 
       - iOS
       - Android
@@ -167,14 +159,12 @@ tests:
       - Expect should see <New Card> on the top of menu
       - Type <123456789000> in [Enter card number] field
       - Tap [Next] button
-      - Expect to see message this card number was added
+      - Expect to see message <this card number was added>
       
   - name: Verify messaging when user add duplicate card number(scan card)
-     group: AddNewCard
+    group: AddNewCard
     environment: Mock
     testcase_id: addnewcard_07
-    tags:
-      - Flow
     platforms: 
       - iOS
       - Android
@@ -192,6 +182,6 @@ tests:
       - Scan card
       - Expect to see <123456789000> in [Enter card number] field
       - Tap [Next] button
-      - Expect to see message this card number was added
+      - Expect to see message <this card number was added>
 
   

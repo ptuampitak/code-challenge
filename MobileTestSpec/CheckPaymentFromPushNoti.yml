@@ -8,8 +8,6 @@ tests:
     group: PaymentFromPushNoti
     environment: Mock
     testcase_id: pushNoti_01
-    tags:
-      - Flow
     platforms: 
       - iOS
       - Android
@@ -35,8 +33,6 @@ tests:
     group: PaymentFromPushNoti
     environment: Mock
     testcase_id: pushNoti_02
-    tags:
-      - Flow
     platforms: 
       - Android
     content:
@@ -62,8 +58,6 @@ tests:
     group: PaymentFromPushNoti
     environment: Mock
     testcase_id: pushNoti_04
-    tags:
-      - Flow
     platforms: 
       - iOS
       - Android
@@ -78,7 +72,7 @@ tests:
       - Tap <Shizue Finnerty> record
       - Expect land to [Confirm payment] Page
       - Type <447945> in [Confirm with your pin] field
-      - Expect to see incorrect pin number
+      - Expect to see message <incorrect pin number>
       - Type <447944> in [Confirm with your pin] field
       - Expect land to [Payment successfully] Page
       - Expect should see <Payment successfully> on the top of menu
@@ -92,8 +86,6 @@ tests:
     group: PaymentFromPushNoti
     environment: Mock
     testcase_id: pushNoti_05
-    tags:
-      - Flow
     platforms: 
       - Android
     content:
@@ -107,7 +99,7 @@ tests:
       - Tap <Shizue Finnerty> record
       - Expect land to [Confirm payment] Page
       - Type <fingerprint invalid authentication> in [Login using Fingerprint] field
-      - Expect to see incorrect fingerprint authentication
+      - Expect to see message <incorrect fingerprint authentication>
       - Type <fingerprint valid authentication> in [Login using Fingerprint] field
       - Expect land to [Payment successfully] Page
       - Expect should see <Payment successfully> on the top of menu
@@ -120,8 +112,6 @@ tests:
     group: PaymentFromPushNoti
     environment: Mock
     testcase_id: pushNoti_06
-    tags:
-      - Flow
     platforms: 
       - iOS
       - Android

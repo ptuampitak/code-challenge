@@ -8,8 +8,6 @@ tests:
     group: Register
     environment: Mock
     testcase_id: register_01
-    tags:
-      - Flow
     platforms: 
       - iOS
       - Android
@@ -29,8 +27,6 @@ tests:
     group: Register
     environment: Mock
     testcase_id: register_02
-    tags:
-      - Flow
     platforms: 
       - iOS
       - Android
@@ -50,8 +46,6 @@ tests:
     group: Register
     environment: Mock
     testcase_id: register_03
-    tags:
-      - Flow
     platforms: 
       - iOS
       - Android
@@ -70,8 +64,6 @@ tests:
     group: Register
     environment: Mock
     testcase_id: register_04
-    tags:
-      - Flow
     platforms: 
       - iOS
       - Android
@@ -92,8 +84,6 @@ tests:
     group: Register
     environment: Mock
     testcase_id: register_05
-    tags:
-      - Flow
     platforms: 
       - iOS
       - Android
@@ -106,7 +96,7 @@ tests:
       - Tap [Get Started] button
       - Wait 60 seconds
       - Type <11233> on otp field
-      - Expect to see OTP has been expired ,please click send OTP again
+      - Expect to see message <OTP has been expired ,please click send OTP again>
       - Tap [Send Again] button
       - Type <23456> on otp field
       - Expect sign up successfully
@@ -117,8 +107,6 @@ tests:
     group: Register
     environment: Mock
     testcase_id: register_06
-    tags:
-      - Flow
     platforms: 
       - iOS
       - Android
@@ -128,7 +116,7 @@ tests:
       - Tap [Get Started] button
       - Expect should see [Get Started] page
       - Tap [Get Started] button
-      - Expect to see message please fill phone number
+      - Expect to see message <please fill phone number>
       - Type <9876766523> in [Phone number] field
       - Type <23456> on otp field
       - Expect sign up successfully

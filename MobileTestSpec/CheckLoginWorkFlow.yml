@@ -8,8 +8,6 @@ tests:
     group: Login
     environment: Mock
     testcase_id: login_01
-    tags:
-      - Flow
     platforms: 
       - iOS
       - Android
@@ -27,8 +25,6 @@ tests:
     group: Login
     environment: Mock
     testcase_id: login_02
-    tags:
-      - Flow
     platforms: 
       - Android
     content:
@@ -46,8 +42,6 @@ tests:
     group: Login
     environment: Mock
     testcase_id: login_03
-    tags:
-      - Flow
     platforms: 
       - iOS
       - Android
@@ -57,7 +51,7 @@ tests:
       - Tap [Sign in] button
       - Expect should see [Login] page
       - Type <447945> in [Login with pin] field
-      - Expect to see incorrect pin number
+      - Expect to see message <incorrect pin number>
       - Type <447944> in [Login with pin] field
       - Expect sign in successfully
       - Expect land to [Transaction] Page
@@ -68,8 +62,6 @@ tests:
     group: Login
     environment: Mock
     testcase_id: login_04
-    tags:
-      - Flow
     platforms: 
       - Android
     content:
@@ -78,7 +70,7 @@ tests:
       - Tap [Sign in] button
       - Expect should see [Login] page
       - Type <fingerprint invalid authentication> in [Login using Fingerprint] field
-      - Expect to see incorrect fingerprint authentication
+      - Expect to see message <incorrect fingerprint authentication>
       - Type <fingerprint valid authentication> in [Login using Fingerprint] field
       - Expect sign in successfully
       - Expect land to [Transaction] Page
