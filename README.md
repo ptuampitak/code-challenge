@@ -8,9 +8,14 @@ The scenarios are inclued
 # Installation Steps
  - Set up mock service(Wiremock)
     - Using Wiremock as a standalone process you can download from this link here :http://wiremock.org/docs/download-and-installation/
-    - Click "download the standalone JAR from here."
-    - Start Wiremock in your machine
+    - Click "download the standalone JAR from here." then you will get file "wiremock-jre8-standalone-2.26.3"
+    - Start Wiremock in your machine by run this command in folder that .jar file has been downloaded(Ref:http://wiremock.org/docs/running-standalone/)
+    
+         $ java -jar wiremock-standalone-2.26.3.jar
+         
     - Test connection http://localhost:8080/test
     - Run this command to create stub which is Wiremock will know HTTP responses for requests matching criteria.
- - Set up IDE for running .Net Franework
+ - Install IDE for running .Net Framework
+    - Download Visual Studio (community) version 2019 : https://visualstudio.microsoft.com/vs/older-downloads/
+    - Run .exe file
  
