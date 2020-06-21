@@ -12,6 +12,7 @@ In .excel file you will see 3 tabs which are
   - CheckLoginFlow.yml
   - CheckAddNewCard.yml
   - CheckPaymentFromPushNoti.yml
+  
 When we do Behaviour-Driven Development with Test-Spec we use concrete examples to specify what we want the software to do. Scenarios are written before automation test code.In the nutshall,From automation test scripts should read action,step and scenarios from test spec.
 
 ## Section 3 : REST API Test Automation
