@@ -15,13 +15,13 @@ In .excel file you will see 3 tabs which are
 When we do Behaviour-Driven Development with Test-Spec we use concrete examples to specify what we want the software to do. Scenarios are written before automation test code.In the nutshall,From automation test scripts should read action,step and scenarios from test spec.
 
 ## Section 3 : REST API Test Automation
-Automation script for calling Wiremock API
+Automation script for calling Wiremock API(https://github.com/ptuampitak/code-challenge/tree/master/OmiseTest)
 This automation test script implemented by .NET(C#) language.
 The scenarios are inclued
   - Get order mock details by calling HTTP GET method ()
   - Create new order API by calling HTTP POST method 
 
-#Installation Steps
+# Installation Steps
 please seen in https://github.com/ptuampitak/code-challenge/blob/master/InstallationSteps.pdf which is contains
  - Set up mock service(Wiremock) API
  - Install IDE for running .Net Framework
